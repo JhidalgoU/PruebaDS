@@ -1,0 +1,17 @@
+
+*.png
+*.vsidx
+*.mp4
+*.pdb
+PruebaDS/.vs/PruebaDS/v17/.suo
+*.v2
+.vs/PruebaDS/v17/.wsuo
+*.targets
+*.props
+*.json
+*.sqlite
+*.cache
+*.BuildWithSkipAnalyzers
+*.CopyComplete
+*.txt
+*.editorconfig
