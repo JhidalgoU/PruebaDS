@@ -8,11 +8,17 @@ class Program
     {
         string pathRoot = Path.Combine("..", "..", "..");
 
-        string videoPath = Path.Combine(pathRoot, "Videos","video (2160p).mp4");
+        string videoPath = Path.Combine(pathRoot, "Videos");
+        Directory.CreateDirectory(videoPath);
+
         string framesDirectory = Path.Combine(pathRoot, "frames");
+        Directory.CreateDirectory(framesDirectory);
+
         string facialFeaturesFramesDirectory = Path.Combine(pathRoot, "frames_features");
+        Directory.CreateDirectory(facialFeaturesFramesDirectory);
+
         string classifiersDirectory = Path.Combine(pathRoot, "haarcascades");
-        string[] classifiers = new string[]
+        string[] classifiers =
         {
             "haarcascade_righteye_2splits.xml",
             "haarcascade_lefteye_2splits.xml",
@@ -34,7 +40,7 @@ class Program
         string classifierPath = Path.Combine(classifiersDirectory, classifier);
         var cascadeClassifier = new CascadeClassifier(classifierPath);
 
-        using (var videoCapture = new VideoCapture(videoPath))
+        using (var videoCapture = new VideoCapture(Path.Combine(videoPath, "video (2160p).mp4")))
         {
             if (!videoCapture.IsOpened())
             {
